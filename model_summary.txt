@@ -1,0 +1,389 @@
+Model: "model_6"
+__________________________________________________________________________________________________
+ Layer (type)                Output Shape                 Param #   Connected to                  
+==================================================================================================
+ input_9 (InputLayer)        [(None, 416, 416, 3)]        0         []                            
+                                                                                                  
+ conv2d_282 (Conv2D)         (None, 416, 416, 32)         7808      ['input_9[0][0]']             
+                                                                                                  
+ conv2d_288 (Conv2D)         (None, 416, 416, 32)         4736      ['input_9[0][0]']             
+                                                                                                  
+ conv2d_294 (Conv2D)         (None, 416, 416, 32)         2432      ['input_9[0][0]']             
+                                                                                                  
+ conv2d_300 (Conv2D)         (None, 416, 416, 32)         896       ['input_9[0][0]']             
+                                                                                                  
+ conv2d_283 (Conv2D)         (None, 416, 416, 32)         82976     ['conv2d_282[0][0]']          
+                                                                                                  
+ conv2d_289 (Conv2D)         (None, 416, 416, 32)         50208     ['conv2d_288[0][0]']          
+                                                                                                  
+ conv2d_295 (Conv2D)         (None, 416, 416, 32)         25632     ['conv2d_294[0][0]']          
+                                                                                                  
+ conv2d_301 (Conv2D)         (None, 416, 416, 32)         9248      ['conv2d_300[0][0]']          
+                                                                                                  
+ max_pooling2d_76 (MaxPooli  (None, 208, 208, 32)         0         ['conv2d_283[0][0]']          
+ ng2D)                                                                                            
+                                                                                                  
+ max_pooling2d_78 (MaxPooli  (None, 208, 208, 32)         0         ['conv2d_289[0][0]']          
+ ng2D)                                                                                            
+                                                                                                  
+ max_pooling2d_80 (MaxPooli  (None, 208, 208, 32)         0         ['conv2d_295[0][0]']          
+ ng2D)                                                                                            
+                                                                                                  
+ max_pooling2d_82 (MaxPooli  (None, 208, 208, 32)         0         ['conv2d_301[0][0]']          
+ ng2D)                                                                                            
+                                                                                                  
+ conv2d_284 (Conv2D)         (None, 208, 208, 64)         165952    ['max_pooling2d_76[0][0]']    
+                                                                                                  
+ conv2d_290 (Conv2D)         (None, 208, 208, 64)         100416    ['max_pooling2d_78[0][0]']    
+                                                                                                  
+ conv2d_296 (Conv2D)         (None, 208, 208, 64)         51264     ['max_pooling2d_80[0][0]']    
+                                                                                                  
+ conv2d_302 (Conv2D)         (None, 208, 208, 64)         18496     ['max_pooling2d_82[0][0]']    
+                                                                                                  
+ conv2d_285 (Conv2D)         (None, 208, 208, 64)         331840    ['conv2d_284[0][0]']          
+                                                                                                  
+ conv2d_291 (Conv2D)         (None, 208, 208, 64)         200768    ['conv2d_290[0][0]']          
+                                                                                                  
+ conv2d_297 (Conv2D)         (None, 208, 208, 64)         102464    ['conv2d_296[0][0]']          
+                                                                                                  
+ conv2d_303 (Conv2D)         (None, 208, 208, 64)         36928     ['conv2d_302[0][0]']          
+                                                                                                  
+ max_pooling2d_77 (MaxPooli  (None, 104, 104, 64)         0         ['conv2d_285[0][0]']          
+ ng2D)                                                                                            
+                                                                                                  
+ max_pooling2d_79 (MaxPooli  (None, 104, 104, 64)         0         ['conv2d_291[0][0]']          
+ ng2D)                                                                                            
+                                                                                                  
+ max_pooling2d_81 (MaxPooli  (None, 104, 104, 64)         0         ['conv2d_297[0][0]']          
+ ng2D)                                                                                            
+                                                                                                  
+ max_pooling2d_83 (MaxPooli  (None, 104, 104, 64)         0         ['conv2d_303[0][0]']          
+ ng2D)                                                                                            
+                                                                                                  
+ conv2d_286 (Conv2D)         (None, 104, 104, 128)        663680    ['max_pooling2d_77[0][0]']    
+                                                                                                  
+ conv2d_292 (Conv2D)         (None, 104, 104, 128)        401536    ['max_pooling2d_79[0][0]']    
+                                                                                                  
+ conv2d_298 (Conv2D)         (None, 104, 104, 128)        204928    ['max_pooling2d_81[0][0]']    
+                                                                                                  
+ conv2d_304 (Conv2D)         (None, 104, 104, 128)        73856     ['max_pooling2d_83[0][0]']    
+                                                                                                  
+ conv2d_287 (Conv2D)         (None, 104, 104, 128)        1327232   ['conv2d_286[0][0]']          
+                                                                                                  
+ conv2d_293 (Conv2D)         (None, 104, 104, 128)        802944    ['conv2d_292[0][0]']          
+                                                                                                  
+ conv2d_299 (Conv2D)         (None, 104, 104, 128)        409728    ['conv2d_298[0][0]']          
+                                                                                                  
+ conv2d_305 (Conv2D)         (None, 104, 104, 128)        147584    ['conv2d_304[0][0]']          
+                                                                                                  
+ concatenate_59 (Concatenat  (None, 104, 104, 512)        0         ['conv2d_287[0][0]',          
+ e)                                                                  'conv2d_293[0][0]',          
+                                                                     'conv2d_299[0][0]',          
+                                                                     'conv2d_305[0][0]']          
+                                                                                                  
+ conv2d_306 (Conv2D)         (None, 104, 104, 256)        131328    ['concatenate_59[0][0]']      
+                                                                                                  
+ max_pooling2d_84 (MaxPooli  (None, 52, 52, 256)          0         ['conv2d_306[0][0]']          
+ ng2D)                                                                                            
+                                                                                                  
+ batch_normalization_91 (Ba  (None, 52, 52, 256)          1024      ['max_pooling2d_84[0][0]']    
+ tchNormalization)                                                                                
+                                                                                                  
+ activation_91 (Activation)  (None, 52, 52, 256)          0         ['batch_normalization_91[0][0]
+                                                                    ']                            
+                                                                                                  
+ conv2d_313 (Conv2D)         (None, 52, 52, 256)          65792     ['activation_91[0][0]']       
+                                                                                                  
+ batch_normalization_92 (Ba  (None, 52, 52, 256)          1024      ['conv2d_313[0][0]']          
+ tchNormalization)                                                                                
+                                                                                                  
+ activation_92 (Activation)  (None, 52, 52, 256)          0         ['batch_normalization_92[0][0]
+                                                                    ']                            
+                                                                                                  
+ conv2d_314 (Conv2D)         (None, 52, 52, 64)           147520    ['activation_92[0][0]']       
+                                                                                                  
+ concatenate_61 (Concatenat  (None, 52, 52, 320)          0         ['max_pooling2d_84[0][0]',    
+ e)                                                                  'conv2d_314[0][0]']          
+                                                                                                  
+ batch_normalization_93 (Ba  (None, 52, 52, 320)          1280      ['concatenate_61[0][0]']      
+ tchNormalization)                                                                                
+                                                                                                  
+ activation_93 (Activation)  (None, 52, 52, 320)          0         ['batch_normalization_93[0][0]
+                                                                    ']                            
+                                                                                                  
+ conv2d_315 (Conv2D)         (None, 52, 52, 256)          82176     ['activation_93[0][0]']       
+                                                                                                  
+ batch_normalization_94 (Ba  (None, 52, 52, 256)          1024      ['conv2d_315[0][0]']          
+ tchNormalization)                                                                                
+                                                                                                  
+ activation_94 (Activation)  (None, 52, 52, 256)          0         ['batch_normalization_94[0][0]
+                                                                    ']                            
+                                                                                                  
+ conv2d_316 (Conv2D)         (None, 52, 52, 64)           147520    ['activation_94[0][0]']       
+                                                                                                  
+ concatenate_62 (Concatenat  (None, 52, 52, 384)          0         ['concatenate_61[0][0]',      
+ e)                                                                  'conv2d_316[0][0]']          
+                                                                                                  
+ batch_normalization_95 (Ba  (None, 52, 52, 384)          1536      ['concatenate_62[0][0]']      
+ tchNormalization)                                                                                
+                                                                                                  
+ activation_95 (Activation)  (None, 52, 52, 384)          0         ['batch_normalization_95[0][0]
+                                                                    ']                            
+                                                                                                  
+ conv2d_317 (Conv2D)         (None, 52, 52, 256)          98560     ['activation_95[0][0]']       
+                                                                                                  
+ batch_normalization_96 (Ba  (None, 52, 52, 256)          1024      ['conv2d_317[0][0]']          
+ tchNormalization)                                                                                
+                                                                                                  
+ activation_96 (Activation)  (None, 52, 52, 256)          0         ['batch_normalization_96[0][0]
+                                                                    ']                            
+                                                                                                  
+ conv2d_318 (Conv2D)         (None, 52, 52, 64)           147520    ['activation_96[0][0]']       
+                                                                                                  
+ concatenate_63 (Concatenat  (None, 52, 52, 448)          0         ['concatenate_62[0][0]',      
+ e)                                                                  'conv2d_318[0][0]']          
+                                                                                                  
+ batch_normalization_97 (Ba  (None, 52, 52, 448)          1792      ['concatenate_63[0][0]']      
+ tchNormalization)                                                                                
+                                                                                                  
+ activation_97 (Activation)  (None, 52, 52, 448)          0         ['batch_normalization_97[0][0]
+                                                                    ']                            
+                                                                                                  
+ conv2d_319 (Conv2D)         (None, 52, 52, 256)          114944    ['activation_97[0][0]']       
+                                                                                                  
+ batch_normalization_98 (Ba  (None, 52, 52, 256)          1024      ['conv2d_319[0][0]']          
+ tchNormalization)                                                                                
+                                                                                                  
+ activation_98 (Activation)  (None, 52, 52, 256)          0         ['batch_normalization_98[0][0]
+                                                                    ']                            
+                                                                                                  
+ conv2d_320 (Conv2D)         (None, 52, 52, 64)           147520    ['activation_98[0][0]']       
+                                                                                                  
+ concatenate_64 (Concatenat  (None, 52, 52, 512)          0         ['concatenate_63[0][0]',      
+ e)                                                                  'conv2d_320[0][0]']          
+                                                                                                  
+ batch_normalization_99 (Ba  (None, 52, 52, 512)          2048      ['concatenate_64[0][0]']      
+ tchNormalization)                                                                                
+                                                                                                  
+ activation_99 (Activation)  (None, 52, 52, 512)          0         ['batch_normalization_99[0][0]
+                                                                    ']                            
+                                                                                                  
+ conv2d_321 (Conv2D)         (None, 52, 52, 256)          131328    ['activation_99[0][0]']       
+                                                                                                  
+ batch_normalization_100 (B  (None, 52, 52, 256)          1024      ['conv2d_321[0][0]']          
+ atchNormalization)                                                                               
+                                                                                                  
+ activation_100 (Activation  (None, 52, 52, 256)          0         ['batch_normalization_100[0][0
+ )                                                                  ]']                           
+                                                                                                  
+ conv2d_322 (Conv2D)         (None, 52, 52, 64)           147520    ['activation_100[0][0]']      
+                                                                                                  
+ concatenate_65 (Concatenat  (None, 52, 52, 576)          0         ['concatenate_64[0][0]',      
+ e)                                                                  'conv2d_322[0][0]']          
+                                                                                                  
+ batch_normalization_101 (B  (None, 52, 52, 576)          2304      ['concatenate_65[0][0]']      
+ atchNormalization)                                                                               
+                                                                                                  
+ activation_101 (Activation  (None, 52, 52, 576)          0         ['batch_normalization_101[0][0
+ )                                                                  ]']                           
+                                                                                                  
+ conv2d_323 (Conv2D)         (None, 52, 52, 256)          147712    ['activation_101[0][0]']      
+                                                                                                  
+ batch_normalization_102 (B  (None, 52, 52, 256)          1024      ['conv2d_323[0][0]']          
+ atchNormalization)                                                                               
+                                                                                                  
+ activation_102 (Activation  (None, 52, 52, 256)          0         ['batch_normalization_102[0][0
+ )                                                                  ]']                           
+                                                                                                  
+ conv2d_324 (Conv2D)         (None, 52, 52, 64)           147520    ['activation_102[0][0]']      
+                                                                                                  
+ conv2d_308 (Conv2D)         (None, 52, 52, 128)          32896     ['max_pooling2d_84[0][0]']    
+                                                                                                  
+ conv2d_310 (Conv2D)         (None, 52, 52, 32)           8224      ['max_pooling2d_84[0][0]']    
+                                                                                                  
+ max_pooling2d_85 (MaxPooli  (None, 52, 52, 256)          0         ['max_pooling2d_84[0][0]']    
+ ng2D)                                                                                            
+                                                                                                  
+ concatenate_66 (Concatenat  (None, 52, 52, 640)          0         ['concatenate_65[0][0]',      
+ e)                                                                  'conv2d_324[0][0]']          
+                                                                                                  
+ conv2d_307 (Conv2D)         (None, 52, 52, 128)          32896     ['max_pooling2d_84[0][0]']    
+                                                                                                  
+ conv2d_309 (Conv2D)         (None, 52, 52, 192)          221376    ['conv2d_308[0][0]']          
+                                                                                                  
+ conv2d_311 (Conv2D)         (None, 52, 52, 96)           76896     ['conv2d_310[0][0]']          
+                                                                                                  
+ conv2d_312 (Conv2D)         (None, 52, 52, 64)           16448     ['max_pooling2d_85[0][0]']    
+                                                                                                  
+ batch_normalization_103 (B  (None, 52, 52, 640)          2560      ['concatenate_66[0][0]']      
+ atchNormalization)                                                                               
+                                                                                                  
+ concatenate_60 (Concatenat  (None, 52, 52, 480)          0         ['conv2d_307[0][0]',          
+ e)                                                                  'conv2d_309[0][0]',          
+                                                                     'conv2d_311[0][0]',          
+                                                                     'conv2d_312[0][0]']          
+                                                                                                  
+ activation_103 (Activation  (None, 52, 52, 640)          0         ['batch_normalization_103[0][0
+ )                                                                  ]']                           
+                                                                                                  
+ concatenate_67 (Concatenat  (None, 52, 52, 1120)         0         ['concatenate_60[0][0]',      
+ e)                                                                  'activation_103[0][0]']      
+                                                                                                  
+ conv2d_325 (Conv2D)         (None, 52, 52, 512)          573952    ['concatenate_67[0][0]']      
+                                                                                                  
+ max_pooling2d_86 (MaxPooli  (None, 26, 26, 512)          0         ['conv2d_325[0][0]']          
+ ng2D)                                                                                            
+                                                                                                  
+ batch_normalization_104 (B  (None, 26, 26, 512)          2048      ['max_pooling2d_86[0][0]']    
+ atchNormalization)                                                                               
+                                                                                                  
+ activation_104 (Activation  (None, 26, 26, 512)          0         ['batch_normalization_104[0][0
+ )                                                                  ]']                           
+                                                                                                  
+ conv2d_332 (Conv2D)         (None, 26, 26, 256)          131328    ['activation_104[0][0]']      
+                                                                                                  
+ batch_normalization_105 (B  (None, 26, 26, 256)          1024      ['conv2d_332[0][0]']          
+ atchNormalization)                                                                               
+                                                                                                  
+ activation_105 (Activation  (None, 26, 26, 256)          0         ['batch_normalization_105[0][0
+ )                                                                  ]']                           
+                                                                                                  
+ conv2d_333 (Conv2D)         (None, 26, 26, 64)           147520    ['activation_105[0][0]']      
+                                                                                                  
+ concatenate_69 (Concatenat  (None, 26, 26, 576)          0         ['max_pooling2d_86[0][0]',    
+ e)                                                                  'conv2d_333[0][0]']          
+                                                                                                  
+ batch_normalization_106 (B  (None, 26, 26, 576)          2304      ['concatenate_69[0][0]']      
+ atchNormalization)                                                                               
+                                                                                                  
+ activation_106 (Activation  (None, 26, 26, 576)          0         ['batch_normalization_106[0][0
+ )                                                                  ]']                           
+                                                                                                  
+ conv2d_334 (Conv2D)         (None, 26, 26, 256)          147712    ['activation_106[0][0]']      
+                                                                                                  
+ batch_normalization_107 (B  (None, 26, 26, 256)          1024      ['conv2d_334[0][0]']          
+ atchNormalization)                                                                               
+                                                                                                  
+ activation_107 (Activation  (None, 26, 26, 256)          0         ['batch_normalization_107[0][0
+ )                                                                  ]']                           
+                                                                                                  
+ conv2d_335 (Conv2D)         (None, 26, 26, 64)           147520    ['activation_107[0][0]']      
+                                                                                                  
+ concatenate_70 (Concatenat  (None, 26, 26, 640)          0         ['concatenate_69[0][0]',      
+ e)                                                                  'conv2d_335[0][0]']          
+                                                                                                  
+ batch_normalization_108 (B  (None, 26, 26, 640)          2560      ['concatenate_70[0][0]']      
+ atchNormalization)                                                                               
+                                                                                                  
+ activation_108 (Activation  (None, 26, 26, 640)          0         ['batch_normalization_108[0][0
+ )                                                                  ]']                           
+                                                                                                  
+ conv2d_336 (Conv2D)         (None, 26, 26, 256)          164096    ['activation_108[0][0]']      
+                                                                                                  
+ batch_normalization_109 (B  (None, 26, 26, 256)          1024      ['conv2d_336[0][0]']          
+ atchNormalization)                                                                               
+                                                                                                  
+ activation_109 (Activation  (None, 26, 26, 256)          0         ['batch_normalization_109[0][0
+ )                                                                  ]']                           
+                                                                                                  
+ conv2d_337 (Conv2D)         (None, 26, 26, 64)           147520    ['activation_109[0][0]']      
+                                                                                                  
+ concatenate_71 (Concatenat  (None, 26, 26, 704)          0         ['concatenate_70[0][0]',      
+ e)                                                                  'conv2d_337[0][0]']          
+                                                                                                  
+ batch_normalization_110 (B  (None, 26, 26, 704)          2816      ['concatenate_71[0][0]']      
+ atchNormalization)                                                                               
+                                                                                                  
+ activation_110 (Activation  (None, 26, 26, 704)          0         ['batch_normalization_110[0][0
+ )                                                                  ]']                           
+                                                                                                  
+ conv2d_338 (Conv2D)         (None, 26, 26, 256)          180480    ['activation_110[0][0]']      
+                                                                                                  
+ batch_normalization_111 (B  (None, 26, 26, 256)          1024      ['conv2d_338[0][0]']          
+ atchNormalization)                                                                               
+                                                                                                  
+ activation_111 (Activation  (None, 26, 26, 256)          0         ['batch_normalization_111[0][0
+ )                                                                  ]']                           
+                                                                                                  
+ conv2d_339 (Conv2D)         (None, 26, 26, 64)           147520    ['activation_111[0][0]']      
+                                                                                                  
+ concatenate_72 (Concatenat  (None, 26, 26, 768)          0         ['concatenate_71[0][0]',      
+ e)                                                                  'conv2d_339[0][0]']          
+                                                                                                  
+ batch_normalization_112 (B  (None, 26, 26, 768)          3072      ['concatenate_72[0][0]']      
+ atchNormalization)                                                                               
+                                                                                                  
+ activation_112 (Activation  (None, 26, 26, 768)          0         ['batch_normalization_112[0][0
+ )                                                                  ]']                           
+                                                                                                  
+ conv2d_340 (Conv2D)         (None, 26, 26, 256)          196864    ['activation_112[0][0]']      
+                                                                                                  
+ batch_normalization_113 (B  (None, 26, 26, 256)          1024      ['conv2d_340[0][0]']          
+ atchNormalization)                                                                               
+                                                                                                  
+ activation_113 (Activation  (None, 26, 26, 256)          0         ['batch_normalization_113[0][0
+ )                                                                  ]']                           
+                                                                                                  
+ conv2d_341 (Conv2D)         (None, 26, 26, 64)           147520    ['activation_113[0][0]']      
+                                                                                                  
+ concatenate_73 (Concatenat  (None, 26, 26, 832)          0         ['concatenate_72[0][0]',      
+ e)                                                                  'conv2d_341[0][0]']          
+                                                                                                  
+ batch_normalization_114 (B  (None, 26, 26, 832)          3328      ['concatenate_73[0][0]']      
+ atchNormalization)                                                                               
+                                                                                                  
+ activation_114 (Activation  (None, 26, 26, 832)          0         ['batch_normalization_114[0][0
+ )                                                                  ]']                           
+                                                                                                  
+ conv2d_342 (Conv2D)         (None, 26, 26, 256)          213248    ['activation_114[0][0]']      
+                                                                                                  
+ batch_normalization_115 (B  (None, 26, 26, 256)          1024      ['conv2d_342[0][0]']          
+ atchNormalization)                                                                               
+                                                                                                  
+ activation_115 (Activation  (None, 26, 26, 256)          0         ['batch_normalization_115[0][0
+ )                                                                  ]']                           
+                                                                                                  
+ conv2d_343 (Conv2D)         (None, 26, 26, 64)           147520    ['activation_115[0][0]']      
+                                                                                                  
+ conv2d_327 (Conv2D)         (None, 26, 26, 128)          65664     ['max_pooling2d_86[0][0]']    
+                                                                                                  
+ conv2d_329 (Conv2D)         (None, 26, 26, 32)           16416     ['max_pooling2d_86[0][0]']    
+                                                                                                  
+ max_pooling2d_87 (MaxPooli  (None, 26, 26, 512)          0         ['max_pooling2d_86[0][0]']    
+ ng2D)                                                                                            
+                                                                                                  
+ concatenate_74 (Concatenat  (None, 26, 26, 896)          0         ['concatenate_73[0][0]',      
+ e)                                                                  'conv2d_343[0][0]']          
+                                                                                                  
+ conv2d_326 (Conv2D)         (None, 26, 26, 128)          65664     ['max_pooling2d_86[0][0]']    
+                                                                                                  
+ conv2d_328 (Conv2D)         (None, 26, 26, 192)          221376    ['conv2d_327[0][0]']          
+                                                                                                  
+ conv2d_330 (Conv2D)         (None, 26, 26, 96)           76896     ['conv2d_329[0][0]']          
+                                                                                                  
+ conv2d_331 (Conv2D)         (None, 26, 26, 64)           32832     ['max_pooling2d_87[0][0]']    
+                                                                                                  
+ batch_normalization_116 (B  (None, 26, 26, 896)          3584      ['concatenate_74[0][0]']      
+ atchNormalization)                                                                               
+                                                                                                  
+ concatenate_68 (Concatenat  (None, 26, 26, 480)          0         ['conv2d_326[0][0]',          
+ e)                                                                  'conv2d_328[0][0]',          
+                                                                     'conv2d_330[0][0]',          
+                                                                     'conv2d_331[0][0]']          
+                                                                                                  
+ activation_116 (Activation  (None, 26, 26, 896)          0         ['batch_normalization_116[0][0
+ )                                                                  ]']                           
+                                                                                                  
+ concatenate_75 (Concatenat  (None, 26, 26, 1376)         0         ['concatenate_68[0][0]',      
+ e)                                                                  'activation_116[0][0]']      
+                                                                                                  
+ conv2d_344 (Conv2D)         (None, 26, 26, 1024)         1410048   ['concatenate_75[0][0]']      
+                                                                                                  
+ max_pooling2d_88 (MaxPooli  (None, 13, 13, 1024)         0         ['conv2d_344[0][0]']          
+ ng2D)                                                                                            
+                                                                                                  
+==================================================================================================
+Total params: 11695488 (44.61 MB)
+Trainable params: 11673216 (44.53 MB)
+Non-trainable params: 22272 (87.00 KB)
+__________________________________________________________________________________________________
